@@ -13,6 +13,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `car_match`
 --
+
 CREATE DATABASE IF NOT EXISTS `car_match` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `car_match`;
 
@@ -83,11 +84,11 @@ CREATE TABLE `Country` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Customer`
+-- Table structure for table `User`
 --
 
-DROP TABLE IF EXISTS `Customer`;
-CREATE TABLE `Customer` (
+DROP TABLE IF EXISTS `User`;
+CREATE TABLE `User` (
   `Code` int(11) NOT NULL,
   `Name` varchar(256) NOT NULL,
   `Address` varchar(256) NOT NULL,
@@ -105,12 +106,12 @@ CREATE TABLE `Customer` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Customer-Transactions`
+-- Table structure for table `User-Transactions`
 --
 
-DROP TABLE IF EXISTS `Customer-Transactions`;
-CREATE TABLE `Customer-Transactions` (
-  `Customer` int(11) NOT NULL,
+DROP TABLE IF EXISTS `User-Transactions`;
+CREATE TABLE `User-Transactions` (
+  `User` int(11) NOT NULL,
   `Transaction` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -153,7 +154,7 @@ CREATE TABLE `Purchase` (
   `Vehicle` int(10) unsigned NOT NULL,
   `Price` double NOT NULL,
   `Seller` int(10) unsigned NOT NULL,
-  `Customer` int(10) unsigned NOT NULL,
+  `User` int(10) unsigned NOT NULL,
   `Transaction` int(10) unsigned NOT NULL,
   `Date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -229,7 +230,7 @@ CREATE TABLE `Transaction` (
   `Status` int(10) unsigned NOT NULL,
   `Description` text NOT NULL,
   `Amount` double NOT NULL,
-  `Customer` int(10) unsigned NOT NULL,
+  `User` int(10) unsigned NOT NULL,
   `Seller` int(10) unsigned NOT NULL,
   `Purchase` int(10) unsigned NOT NULL,
   `Bank` int(10) unsigned NOT NULL
@@ -312,9 +313,9 @@ ALTER TABLE `Country`
  ADD PRIMARY KEY (`Code`);
 
 --
--- Indexes for table `Customer`
+-- Indexes for table `User`
 --
-ALTER TABLE `Customer`
+ALTER TABLE `User`
  ADD PRIMARY KEY (`Code`);
 
 --

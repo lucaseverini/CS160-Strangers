@@ -1,0 +1,212 @@
+<!-- 
+	build.xml
+
+    Ant file to build the CarMatch web app and database
+        
+    SJSU - CS160 - HW #6 - Strangers
+	April-22-2015
+-->
+
+<project name="CarMatch" default="deploy" basedir=".">
+    <description>Build file for CS160 project</description>
+    
+	<!-- get the properties defined in the property file -->
+    <property file="build.properties" />
+    
+	<!-- set global properties for this build -->
+	<property name="src" location="src"/>
+	<property name="build" location="build"/>
+	<property name="dist" location="dist"/>
+  
+	<taskdef name="start" classname="org.apache.catalina.ant.StartTask" classpath="lib/catalina-ant.jar"/>
+	<taskdef name="stop" classname="org.apache.catalina.ant.StopTask" classpath="lib/catalina-ant.jar"/>
+	<taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" classpath="lib/catalina-ant.jar"/>
+	<taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" classpath="lib/catalina-ant.jar"/>
+
+  
+  	<target name="init"> 
+    	<!-- Create the time stamp -->
+		<tstamp prefix="build-info">
+			<format property="current-date" pattern="d-MMMM-yyyy" locale="en" />
+			<format property="current-time" pattern="hh:mm:ss a z" locale="en" />
+			<format property="year-month-day" pattern="yyyy-MM-dd" locale="en" />
+		</tstamp>
+
+    	<!-- Create the build directory structure used by compile -->
+    	<mkdir dir="${build}"/>
+  	</target>
+
+
+  	<target name="compile" depends="init" description="Compile the java source">  
+    	<!-- Compile the java code from ${src} into ${build} -->
+    	<javac srcdir="${src}" destdir="${build}"/>    
+  	</target>
+ 
+ 
+  	<target name="copy" depends="compile" description="Compile the java source">
+    	<!-- Copy the compiled java code into ${build} -->
+    	<copy todir="${build}">
+			<fileset dir=".">  
+				<include name="web/**"/>
+			</fileset>
+  		</copy>
+
+		<mkdir dir="${build}/web/WEB-INF/classes/servlets"/>
+    	<move todir="${build}/web/WEB-INF/classes/servlets">
+    		<fileset dir="${build}">
+    			<include name="*.class"/>
+    		</fileset>
+  		</move>
+
+		<copy todir="${build}/web/WEB-INF" >  
+			<fileset dir=".">  
+				<include name="lib/**"/>
+			</fileset>
+		</copy>	
+  	</target>
+  
+  
+  	<target name="dist" depends="compile, copy" description="Generate the distribution">
+
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}"/>
+	
+		<!-- Put everything in ${build} into the ${project.name}.jar file -->
+		<jar jarfile="${dist}/${name}.jar" basedir="${build}"/>
+	
+		<!-- Put everything in ${build} into the ${project.name}.war file -->
+		<war destfile="${dist}/${name}.war" webxml="${build}/web/WEB-INF/web.xml">
+			<fileset dir="${build}/web"/>
+			<manifest>
+				<attribute name="Built-By" value="${builder}" />
+				<attribute name="Built-On" value="${build-info.current-date}" />
+				<attribute name="Built-At" value="${build-info.current-time}" />
+			</manifest>
+		</war>
+  	</target>
+
+
+  	<target name="clean" description="clean up">
+		<echo>Deleting project build and dist directories</echo>
+    	<!-- Delete the ${build} and ${dist} directory trees -->
+    	<delete dir="${build}"/>
+    	<delete dir="${dist}"/>
+  	</target>
+
+
+  	<target name="clean_all" depends="clean_db" description="clean up">
+		<echo>Deleting project build and dist directories</echo>
+    	<!-- Delete the ${build} and ${dist} directory trees -->
+    	<delete dir="${build}"/>
+    	<delete dir="${dist}"/>
+  	</target>
+
+
+  	<target name="create_db_safe" depends="check_db" description="Create the mysql database 'car_match'"
+  		unless="db.present">
+		<echo>Creating DB car_match</echo>
+ 		<sql
+			classpath="lib/mysql-connector-java-5.1.23-bin.jar"
+			driver="com.mysql.jdbc.Driver"
+			url="${mysql-url}"
+			userid="${mysql-userid}"
+			password="${mysql-password}"
+			autocommit="true"
+			src="db/carmatch_create_db.sql">
+		</sql>
+  	</target>
+
+  	<target name="create_db" description="Create the mysql database 'car_match' if doesn't exist">
+		<echo>Creating DB car_match</echo>
+ 		<sql
+			classpath="lib/mysql-connector-java-5.1.23-bin.jar"
+			driver="com.mysql.jdbc.Driver"
+			url="${mysql-url}"
+			userid="${mysql-userid}"
+			password="${mysql-password}"
+			autocommit="true"
+			src="db/carmatch_create_db.sql">
+		</sql>
+  	</target>
+
+  	<target name="clean_db" depends="check_db" description="Delete the mysql database 'car_match'"
+  		if="db.present">
+		<echo>Deleting DB car_match</echo>
+		<sql
+			classpath="lib/mysql-connector-java-5.1.23-bin.jar"
+			driver="com.mysql.jdbc.Driver"
+			url="${mysql-url}"
+			userid="${mysql-userid}"
+			password="${mysql-password}"
+			autocommit="true">
+			DROP DATABASE car_match;
+		</sql>
+  	</target>
+
+	<target name="check_db">
+  		<echo message="Checking database presence"/>
+		<delete file="db.present"/>
+		<sql 
+			classpath="lib/mysql-connector-java-5.1.23-bin.jar"
+			driver="com.mysql.jdbc.Driver"
+			url="${mysql-url}/${mysql-db}"
+			userid="${mysql-userid}"
+			password="${mysql-password}"
+			failOnConnectionError="false" 
+			onerror="continue" 
+			warningproperty="db.fail" 
+			errorproperty="db.fail" 
+			print="true"
+			output="db.present"> 
+			SELECT * from Vehicle;
+		</sql>
+		
+  		<condition property="db.present">
+    		<available file="db.present"/>
+  		</condition>
+		
+		<delete file="db.present"/>
+	</target>
+
+
+	<target name="stop" description="Stop application in Tomcat">
+		<echo>Stopping CarMatch</echo>
+		<stop 
+			url="${tomcat-manager-url}" 
+			username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}" 
+			path="/${name}" />
+	</target>
+
+
+	<target name="start" description="Start application in Tomcat">
+		<echo>Starting CarMatch</echo>
+		<start 
+			url="${tomcat-manager-url}" 
+			username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}" 
+			path="/${name}" />
+	</target>
+
+
+	<target name="undeploy" description="Undeploy from Tomcat">
+		<echo>Undeploying from Tomcat</echo>
+		<undeploy 
+			url="${tomcat-manager-url}"
+			username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}"
+			path="/${name}" />
+	</target>
+	
+	
+	<target name="deploy" depends="dist, create_db_safe" description="Deploy to Tomcat">
+		<echo>Deploying to Tomcat</echo>
+		<deploy 
+			url="${tomcat-manager-url}"
+			username="${tomcat-manager-username}"
+			password="${tomcat-manager-password}"
+			path="/${name}"
+			war="file:${dist}/${name}.war" />
+	</target>
+
+</project>
