@@ -3,6 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 
+
 //incomplete
 /* This assumes that it will run as the top-level file, and includes results.jsp. But our search forms currently link directly to results.jsp.
 We'll need to move some things around before this will work.
