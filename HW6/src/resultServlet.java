@@ -8,7 +8,7 @@ import java.sql.*;
 We'll need to move some things around before this will work.
 */
 
-public class resultServlet extends HttpServlet
+public class ResultServlet extends HttpServlet
 {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
