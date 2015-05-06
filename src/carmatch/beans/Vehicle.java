@@ -1,3 +1,4 @@
+package carmatch.beans;
 import java.io.Serializable;
 
 /**
