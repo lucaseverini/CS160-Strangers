@@ -3,26 +3,31 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 import java.util.LinkedList;
+import carmatch.beans.Vehicle;
 //incomplete
-public class resultServlet extends HttpServlet
+/* This assumes that it will run as the top-level file, and includes results.jsp. But our search forms currently link directly to results.jsp.
+We'll need to move some things around before this will work.
+*/
+public class ResultServlet extends HttpServlet
 {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOExcepton
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		Class.forName("com.mysql.jdbc.Driver");
 		String make = request.getParameter("make");
 		String model = request.getParameter("model");
 		String priceTo = request.getParameter("priceTo");
 		String priceFrom = request.getParameter("priceFrom");
 		String query = "";
-		String sqlResult = "";
-		LinkedList<vehicle> cars = new LinkedList<vehicle>();
+		Connection connection = null;
+		Statement statement = null;
+		LinkedList<Vehicle> cars = new LinkedList<Vehicle>();
 		try
 		{
-			String url = "jdbc:mysql://localhost:3306/car_match"; //Put in db location here 
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/car_match"; // Need to switch away from hardcoded details
 			String username = "root"; 
-			String password = "root"
-			Connection connection = DriverManager.getConnection(url, username, password);
-			Statement statement = connection.createStatement();
+			String password = "root";
+			connection = DriverManager.getConnection(url, username, password);
+			statement = connection.createStatement();
 			if (!make.equals(""))
 			{
 				query += "SELECT * FROM vehicle WHERE manufacturer=" + make;
@@ -59,13 +64,14 @@ public class resultServlet extends HttpServlet
 				x.setModel(rs.getString("Model"));
 				cars.add(x);
 			}
-			request.setAttribute("results", cars)
+			request.setAttribute("results", cars);
 			this.getServletContext().getRequestDispatcher("/results.jsp").include(request, response);
 			rs.close();	
 		}	
-		catch(SQLException e)
+		catch(Exception e)
 		{
-			sqlResult = "Error: " + e.getMessage();
+			// TODO: Do something more user-friendly
+			e.printStackTrace();
 		}
 		finally
 		{
