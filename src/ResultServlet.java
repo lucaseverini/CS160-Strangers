@@ -2,48 +2,70 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
-
-
+import java.util.LinkedList;
 //incomplete
-/* This assumes that it will run as the top-level file, and includes results.jsp. But our search forms currently link directly to results.jsp.
-We'll need to move some things around before this will work.
-*/
-
-public class ResultServlet extends HttpServlet
+public class resultServlet extends HttpServlet
 {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOExcepton
 	{
+		Class.forName("com.mysql.jdbc.Driver");
 		String make = request.getParameter("make");
 		String model = request.getParameter("model");
-		String price = request.getParameter("price");
-		String sql = "vehicle";
+		String priceTo = request.getParameter("priceTo");
+		String priceFrom = request.getParameter("priceFrom");
 		String query = "";
 		String sqlResult = "";
-
-		Connection connection = null;
-		Statement statement = null;
-		
+		LinkedList<vehicle> cars = new LinkedList<vehicle>();
 		try
 		{
-			String url = ""; //Put in db location here 
-			String username = ""; 
-			String password = "";
-			
-			connection = DriverManager.getConnection(url, username, password);
-			statement = connection.createStatement();
-			
+			String url = "jdbc:mysql://localhost:3306/car_match"; //Put in db location here 
+			String username = "root"; 
+			String password = "root"
+			Connection connection = DriverManager.getConnection(url, username, password);
+			Statement statement = connection.createStatement();
 			if (!make.equals(""))
 			{
-				query += "SELECT * FROM vehicle where maker=" + make;
+				query += "SELECT * FROM vehicle WHERE manufacturer=" + make;
 			}
+			if (!model.equals(""))
+			{
+				query += "SELECT * FROM vehicle WHERE model=" + model;
+			}
+			if ((!priceTo.equals("")) || !priceFrom.equals(""))
+			{
+
+				if ((!priceTo.equals("")) && !priceFrom.equals(""))
+				{
+					query += "SELECT * FROM vehicle WHERE price>=" + priceFrom + " AND price<= " + priceTo;
+				}
+				else if (!priceTo.equals(""))
+				{
+					query += "SELECT * FROM vehicle WHERE price<= " + priceTo;
+				}
+				else
+				{
+					query += "SELECT * FROM vehicle WHERE price>=" + priceFrom;
+
+				}
+			}
+
 			
-			// Construct a LinkedList of Vehicles
-			// Call request.setAttribute("results", <constructed list>)
+			ResultSet rs = statement.executeQuery(query); 
+			while(rs.next())
+			{
+				Vehicle x = new Vehicle();
+				x.setPrice(rs.getInt("Price"));
+				x.setMaker(rs.getString("Manufacturer"));
+				x.setModel(rs.getString("Model"));
+				cars.add(x);
+			}
+			request.setAttribute("results", cars)
 			this.getServletContext().getRequestDispatcher("/results.jsp").include(request, response);
+			rs.close();	
 		}	
-		catch(SQLException ex)
+		catch(SQLException e)
 		{
-			sqlResult = "Error: " + ex.getMessage();
+			sqlResult = "Error: " + e.getMessage();
 		}
 		finally
 		{
