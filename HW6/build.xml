@@ -90,7 +90,7 @@
   	</target>
 
 
-  	<target name="clean" description="clean up">
+  	<target name="clean" description="Delete everything except the database">
 		<echo>Deleting project build and dist directories</echo>
     	<!-- Delete the ${build} and ${dist} directory trees -->
     	<delete dir="${build}"/>
@@ -98,7 +98,7 @@
   	</target>
 
 
-  	<target name="clean_all" depends="clean_db" description="clean up">
+  	<target name="clean_all" depends="clean_db" description="Delete everything including the database">
 		<echo>Deleting project build and dist directories</echo>
     	<!-- Delete the ${build} and ${dist} directory trees -->
     	<delete dir="${build}"/>
@@ -120,7 +120,7 @@
 		</sql>
   	</target>
 
-  	<target name="create_db" description="Create the mysql database 'car_match' if doesn't exist">
+  	<target name="create_db" description="Create the mysql database 'car_match' if it doesn't exist">
 		<echo>Creating DB car_match</echo>
  		<sql
 			classpath="lib/mysql-connector-java-5.1.23-bin.jar"
