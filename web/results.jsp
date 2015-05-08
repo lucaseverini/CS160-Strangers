@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="carmatch.beans.Vehicle, java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,36 +16,18 @@
 		<th>Brand</th>
 		<th>Model</th>
 	</tr>
+	<% for (Vehicle vehicle : request.getAttribute("results")) { %> 
 	<tr>
-		<td>1</td>
-		<td>Ford</td>
-		<td>Forerunner</td>
+		<td>$${vehicle.price / 100}</td>
+		<td>${vehicle.brand}</td>
+		<td>${vehicle.model}</td>
 		<td>
 		<form action="checkout.jsp" method = "GET">
 		<input type="submit" name="buy" value="buy">
 		</form>
 		</td>
 	</tr>
-	<tr>
-		<td>2</td>
-		<td>Honda</td>
-		<td>Accord</td>
-		<td>
-		<form action="checkout.jsp" method = "GET">
-		<input type="submit" name="buy" value="buy">
-		</form>
-		</td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td>Tesla</td>
-		<td>Roadster</td>
-		<td>
-		<form action="checkout.jsp" method = "GET">
-		<input type="submit" name="buy" value="buy">
-		</form>
-		</td>
-	</tr>
+	<% } %>
 	
 </table>
 </html>
