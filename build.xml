@@ -75,9 +75,6 @@
 		<!-- Create the distribution directory -->
 		<mkdir dir="${dist}"/>
 	
-		<!-- Put everything in ${build} into the ${project.name}.jar file -->
-		<jar jarfile="${dist}/${name}.jar" basedir="${build}"/>
-	
 		<!-- Put everything in ${build} into the ${project.name}.war file -->
 		<war destfile="${dist}/${name}.war" webxml="${build}/web/WEB-INF/web.xml">
 			<fileset dir="${build}/web"/>
