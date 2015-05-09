@@ -176,7 +176,7 @@
 			url="${tomcat-manager-url}" 
 			username="${tomcat-manager-username}"
 			password="${tomcat-manager-password}" 
-			path="/${name}" />
+			path="/" />
 	</target>
 
 
@@ -186,7 +186,7 @@
 			url="${tomcat-manager-url}" 
 			username="${tomcat-manager-username}"
 			password="${tomcat-manager-password}" 
-			path="/${name}" />
+			path="/" />
 	</target>
 
 
@@ -196,7 +196,7 @@
 			url="${tomcat-manager-url}"
 			username="${tomcat-manager-username}"
 			password="${tomcat-manager-password}"
-			path="/${name}" />
+			path="/" />
 	</target>
 	
 	
@@ -206,7 +206,7 @@
 			url="${tomcat-manager-url}"
 			username="${tomcat-manager-username}"
 			password="${tomcat-manager-password}"
-			path="/${name}"
+			path="/"
 			war="file:${dist}/${name}.war" />
 	</target>
 

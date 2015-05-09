@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet
            session.setAttribute("user", user);
            session.setAttribute("id", id);
            session.setMaxInactiveInterval(30*60);
-           String encodedURL = response.encodeRedirectURL("index.jsp");
+           String encodedURL = response.encodeRedirectURL("/");
            response.sendRedirect(encodedURL);
         }
         
