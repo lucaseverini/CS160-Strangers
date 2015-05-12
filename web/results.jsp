@@ -9,6 +9,8 @@
 
 <body>
 	<%@ include file="header.jsp" %>
+
+<% if (!request.getAttribute("results").isEmpty()) { %>
 <h1 id="pageTitle">Search Results</h1>
 <table id="searchResults">
 	<tr>
@@ -28,6 +30,10 @@
 		</td>
 	</tr>
 	<% } %>
-	
+<% } else { %>
+<h1 id="pageTitle">No Match</h1>
+<p>We couldn't find any listings matching your query.</p>
+<!-- This could be better, for example including what we searched for so the user can spot any mistakes they made. -->
+<% } %>
 </table>
 </html>
