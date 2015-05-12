@@ -13,7 +13,7 @@
 	<p id="content">Placeholder for other stuff<p>
 	
 	<!-- Dunno where to put the search box -->
-	<form action="results.jsp" method = "GET" id ="carsearch">
+	<form action="results" method = "GET" id ="carsearch">
 		Search for cars: <input type="text" name="carsearch">
 		<input type="submit" value = "Search">
 	</form>

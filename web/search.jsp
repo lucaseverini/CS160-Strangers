@@ -9,7 +9,7 @@
 <body>
 	<%@ include file="header.jsp" %>
 <h1 id="pageTitle">Advanced Search</h1>
-<form action="results.jsp" method="GET">
+<form action="results" method="GET">
 	<div>
 		Price: <input type="number" name="priceFrom">
 		to <input type="number" name="priceTo">

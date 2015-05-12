@@ -27,4 +27,14 @@
     <url-pattern>/LogoutServlet</url-pattern>
 </servlet-mapping>
 
+<servlet>
+    <servlet-name>ResultServlet</servlet-name>
+    <servlet-class>ResultServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ResultServlet</servlet-name>
+    <url-pattern>/results</url-pattern>
+</servlet-mapping>
+
 </web-app>

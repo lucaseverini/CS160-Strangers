@@ -5,9 +5,6 @@ import java.sql.*;
 import java.util.LinkedList;
 import carmatch.beans.Vehicle;
 //incomplete
-/* This assumes that it will run as the top-level file, and includes results.jsp. But our search forms currently link directly to results.jsp.
-We'll need to move some things around before this will work.
-*/
 public class ResultServlet extends HttpServlet
 {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
