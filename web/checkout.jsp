@@ -7,7 +7,7 @@
 </head>
 
 <body>
- 	<%@ include file="header.jsp" %>
+	<%@ include file="header.jsp" %>
 <h1 id="pageTitle">Vehicle Purchase Checkout</h1>
 
 <form name="checkout_payment" action="" method="post">
@@ -18,14 +18,8 @@
           </tr>
         
       </table></div>
+      <div><span class="ch"><b>Billing Address</b></span></div>
       <div><table border="0" width="100%" cellspacing="0" cellpadding="2">
-          <tr>
-            <td class="main"><span class="ch"><b>Billing Address</b></span></td>
-          </tr>
-      </table></div>
-      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
-          <tr class="tarc">
-            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
               <tr>
                 <td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
                 <td class="main" width="50%" valign="top">Please choose from your address book where you would like the invoice to be sent to.<br><br><a href=""><img src="images/buttons/button_change_address.gif" border="0" alt="Change Address" title=" Change Address " width="197" height="32"></a></td>
@@ -38,17 +32,9 @@
                   </tr>
                 </table></td>
               </tr>
-            </table></td>
-          </tr>
       </table></div>
+      <div><span class="ch"><b>Payment Method</b></span></div>
       <div><table border="0" width="100%" cellspacing="0" cellpadding="2">
-          <tr>
-            <td class="main"><span class="ch"><b>Payment Method</b></span></td>
-          </tr>
-      </table></div>
-      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
-          <tr class="tarc">
-            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
               <tr>
                 <td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
                 <td class="main" width="90%" valign="top"><b>Please select your payment method below for this order:</b></td>
@@ -149,23 +135,15 @@
                 </table></td>
                 <td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
               </tr>
-            </table></td>
-          </tr>
       </table></div>
 
       <div class="main"><span class="ch"><b>Trackable Shipping</b></span></div>
-      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
-                    <tr class="tarc">
-                        <td class="main" width="100%" valign="top" align="right"><table cellpadding="2" cellspacing="2" border="0"><tr><td><font size=2 face=arial color=black><b>Do you want Trackable Shipping with Insurance?</td><td align="center" valign="center"  width="28"><input type="checkbox" name="choose_insurance" value="1" checked onClick="DoTheCheck();"></td><td align="left" valign="center" width="28"><a style="cursor:hand" onclick="javascript:window.open('TrackingExplain.html',null,'scrollbars,resizable,width=500,height=420,left=50,top=50');"><img src="images/icons/question-mark.jpg" alt="Help with Tracking" border=0></a></td></tr></table></td>
-                    </tr>
+      <div><table cellpadding="2" cellspacing="2" border="0">
+        <tr><td><font size=2 face=arial color=black><b>Do you want Trackable Shipping with Insurance?</td><td align="center" valign="center"  width="28"><input type="checkbox" name="choose_insurance" value="1" checked onClick="DoTheCheck();"></td><td align="left" valign="center" width="28"><a style="cursor:hand" onclick="javascript:window.open('TrackingExplain.html',null,'scrollbars,resizable,width=500,height=420,left=50,top=50');"><img src="images/icons/question-mark.jpg" alt="Help with Tracking" border=0></a></td></tr>
       </table></div>
 
-      <div><table border="0" width="100%" cellspacing="0" cellpadding="2" bgcolor="#F0F8FF">
-        <td class="main"><span class="ch"><b>Credits Available</b></span></td>
-      </tr>
-      </table></div>
-      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox" bgcolor="#F0F8FF">
-     <tr class="infoBoxContents"><td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+      <div><span class="ch"><b>Credits Available</b></span></div>
+      <div><table border="0" width="100%" cellspacing="0" cellpadding="2">
        <tr><td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
            <td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
  <tr class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)" >
@@ -173,18 +151,15 @@
 <tr>
  <td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td> <td class="main">
 Enter Redeem Code&nbsp;&nbsp;<input type="text" name="gv_redeem_code"></td> <td align="right"><input type="image" name="submit_redeem" onClick="" src="images/buttons/button_redeem.gif" border="0" alt="IMAGE_REDEEM_VOUCHER" title = "IMAGE_REDEEM_VOUCHER"></td> <td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td></tr>
-                           </table></td><td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td></tr></table></td></tr></table></div>
-      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
-          <tr class="tarc">
-            <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+                           </table></td><td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td></tr>
+      </table></div>
+      <div><table border="0" width="100%" cellspacing="0" cellpadding="2">
               <tr>
                 <td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
                 <td class="main"><font size=3 face=arial color=black>Click <b>continue</b> button to view order summary and confirm</td>
                 <td class="main" align="right"><input type="image" src="images/buttons/button_continue.gif" border="0" alt="Continue" title=" Continue "></td>
                 <td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
               </tr>
-            </table></td>
-          </tr>
       </table></div>
 </form>
 </body>
