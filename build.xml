@@ -65,6 +65,7 @@
 		<copy todir="${build}/web/WEB-INF" >  
 			<fileset dir=".">  
 				<include name="lib/**"/>
+				<include name="build.properties"/>
 			</fileset>
 		</copy>	
   	</target>
