@@ -14,7 +14,7 @@ public class LogoutServlet extends HttpServlet
         {
             session.invalidate();
         }
-        String encodedURL = response.encodeRedirectURL("index.jsp");
+        String encodedURL = response.encodeRedirectURL("/");
         response.sendRedirect(encodedURL);
     }
         
