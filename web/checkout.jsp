@@ -10,34 +10,20 @@
  	<%@ include file="header.jsp" %>
 <h1 id="pageTitle">Vehicle Purchase Checkout</h1>
 
-<table border="0" width="100%" cellspacing="3" cellpadding="3">
-  <tr>
-<td width="25" valign="top"><table border="0" width="25" cellspacing="0" cellpadding="2">
-<!-- <td width="125" valign="top"><table border="0" width="125" cellspacing="0" cellpadding="2"> //-->
-<!-- left_navigation //-->
-<!-- left_navigation_eof //-->
-    </table></td>
-<!-- body_text //-->
-    <td width="100%" valign="top"><form name="checkout_payment" action="" method="post" onsubmit=""><table border="0" width="100%" cellspacing="0" cellpadding="0">
-      <tr><td><table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#F0F8FF">
+<form name="checkout_payment" action="" method="post">
+      <div><table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#F0F8FF">
           <tr>
             <td class="pageHeading"><table cellpadding=0 cellspacing=4 border=0><td valign=middle><img src=images/secure.gif alt=secure></td><td valign=middle><font face="arial" size="4" color="#888888">Payment Information</td></tr></table></td>
             <td class="pageHeading" align="right"><img src=images/secure.gif alt=secure></td>
           </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><img src="images/pixel_trans.gif" border="0" alt="" width="100%" height="10"></td>
-      </tr>
-      <tr>
-        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+        
+      </table></div>
+      <div><table border="0" width="100%" cellspacing="0" cellpadding="2">
           <tr>
             <td class="main"><span class="ch"><b>Billing Address</b></span></td>
           </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
+      </table></div>
+      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
           <tr class="tarc">
             <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
               <tr>
@@ -54,20 +40,13 @@
               </tr>
             </table></td>
           </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><img src="images/pixel_trans.gif" border="0" alt="" width="100%" height="10"></td>
-      </tr>
-      <tr>
-        <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+      </table></div>
+      <div><table border="0" width="100%" cellspacing="0" cellpadding="2">
           <tr>
             <td class="main"><span class="ch"><b>Payment Method</b></span></td>
           </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
+      </table></div>
+      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
           <tr class="tarc">
             <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
               <tr>
@@ -172,34 +151,20 @@
               </tr>
             </table></td>
           </tr>
-        </table></td>
+      </table></div>
 
-       <tr>
-        <td><img src="images/pixel_trans.gif" border="0" alt="" width="100%" height="10"></td>
-      </tr>
-
-      <tr>
-         <td class="main"><span class="ch"><b>Trackable Shipping</b></span></td>
-      </tr>
-            <tr>
-                <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
+      <div class="main"><span class="ch"><b>Trackable Shipping</b></span></div>
+      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
                     <tr class="tarc">
                         <td class="main" width="100%" valign="top" align="right"><table cellpadding="2" cellspacing="2" border="0"><tr><td><font size=2 face=arial color=black><b>Do you want Trackable Shipping with Insurance?</td><td align="center" valign="center"  width="28"><input type="checkbox" name="choose_insurance" value="1" checked onClick="DoTheCheck();"></td><td align="left" valign="center" width="28"><a style="cursor:hand" onclick="javascript:window.open('TrackingExplain.html',null,'scrollbars,resizable,width=500,height=420,left=50,top=50');"><img src="images/icons/question-mark.jpg" alt="Help with Tracking" border=0></a></td></tr></table></td>
                     </tr>
-                </table></td>
-            </tr      <tr>
-        <td><img src="images/pixel_trans.gif" border="0" alt="" width="100%" height="10"></td>
-      </tr>
-            </tr>
+      </table></div>
 
-<tr>
-   <td><table border="0" width="100%" cellspacing="0" cellpadding="2" bgcolor="#F0F8FF">
+      <div><table border="0" width="100%" cellspacing="0" cellpadding="2" bgcolor="#F0F8FF">
         <td class="main"><span class="ch"><b>Credits Available</b></span></td>
       </tr>
-    </table></td>
-  </tr>
-<tr>
-   <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox" bgcolor="#F0F8FF">
+      </table></div>
+      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox" bgcolor="#F0F8FF">
      <tr class="infoBoxContents"><td><table border="0" width="100%" cellspacing="0" cellpadding="2">
        <tr><td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
            <td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
@@ -208,11 +173,8 @@
 <tr>
  <td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td> <td class="main">
 Enter Redeem Code&nbsp;&nbsp;<input type="text" name="gv_redeem_code"></td> <td align="right"><input type="image" name="submit_redeem" onClick="" src="images/buttons/button_redeem.gif" border="0" alt="IMAGE_REDEEM_VOUCHER" title = "IMAGE_REDEEM_VOUCHER"></td> <td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td></tr>
-                           </table></td><td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td></tr></table></td></tr></table></td><tr><td width="100%"><img src="images/pixel_trans.gif" border="0" alt="" width="100%" height="10"></td></tr>      <tr>
-        <td><img src="images/pixel_trans.gif" border="0" alt="" width="100%" height="10"></td>
-      </tr>
-      <tr>
-        <td><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
+                           </table></td><td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td></tr></table></td></tr></table></div>
+      <div><table border="0" width="100%" cellspacing="1" cellpadding="2" class="tarc" bgcolor="#F0F8FF">
           <tr class="tarc">
             <td><table border="0" width="100%" cellspacing="0" cellpadding="2">
               <tr>
@@ -223,29 +185,7 @@ Enter Redeem Code&nbsp;&nbsp;<input type="text" name="gv_redeem_code"></td> <td 
               </tr>
             </table></td>
           </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><img src="images/pixel_trans.gif" border="0" alt="" width="100%" height="10"></td>
-      </tr>
-      <tr>
-        <td>
-
-</td>
-      </tr>
-    </table></form></td>
-<!-- body_text_eof //-->
-    <td width="25" valign="top"><table border="0" width="25" cellspacing="0" cellpadding="2">
-<!-- <td width="125" valign="top"><table border="0" width="125" cellspacing="0" cellpadding="2"> //-->
-<!-- right_navigation //-->
-<!-- right_navigation_eof //-->
-    </table></td>
-  </tr>
-</table>
-<!-- body_eof //-->
-
-<!-- footer //-->
-<!-- footer_eof //-->
-<br>
- </body>
+      </table></div>
+</form>
+</body>
 </html>
