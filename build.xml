@@ -55,8 +55,8 @@
 			</fileset>
   		</copy>
 
-		<mkdir dir="${build}/web/WEB-INF/classes/servlets"/>
-    	<move todir="${build}/web/WEB-INF/classes/servlets">
+		<mkdir dir="${build}/web/WEB-INF/classes"/>
+    	<move todir="${build}/web/WEB-INF/classes">
     		<fileset dir="${build}">
     			<include name="*.class"/>
     		</fileset>
