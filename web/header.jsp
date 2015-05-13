@@ -1,12 +1,13 @@
 <!-- Start of header -->
 <div class="header"> 
-	<h1 id="logo" > CarMatch </h1>
+	<h1 id="logo" ><a href="/">CarMatch</a></h1>
 	<% // Temporary user detection until we create the real account system
 	if (session.getAttribute("user") == null) { %>
 	<form action="/LoginServlet" method="POST" id="login">
-		Username: <input type="text" class="smallbox" name="user">
-		Password: <input type="password" class="smallbox" name="pass">
+		<label>Username: <input type="text" class="smallbox" name="user"></label>
+		<label>Password: <input type="password" class="smallbox" name="pass"></label>
 		<input type="submit" value="Login" class="smallbox">
+		<div id="accountInvite">Need an account? <a href="/registerform.jsp">Register</a></div>
 	</form>
 	<% } 
         else 

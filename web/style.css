@@ -19,9 +19,12 @@ body {
 #login, #logout {
 	float: right;
 	font-size: 12px;
-	margin: 10px;
 	padding: 5px;
 	display: inline-block;
+	border: 1px solid black; /* temporary */
+}
+#accountInvite {
+	text-align: center;
 }
 #pageTitle {
 	color:#003399;
