@@ -1,4 +1,13 @@
+/*
+	Vehicle.java
+
+    SJSU - CS160 - Strangers
+
+	May-5-2015
+*/
+
 package carmatch.beans;
+
 import java.io.Serializable;
 
 /**
@@ -6,46 +15,56 @@ import java.io.Serializable;
  * Only implements enough for display in search results; add more as more of the
  * application is implemented.
  */
-public class Vehicle implements Serializable {
+public class Vehicle implements Serializable 
+{
+	private static final long serialVersionUID = 1L;
 	
 	private long id;
-	private int price; // Price in cents
+	private int price;		// Price in cents
 	private String maker;
 	private String model;
 	
-	public Vehicle() {
+	public Vehicle() 
+	{
 	}
 	
-	public long getId() {
+	public long getId() 
+	{
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(long id) 
+	{
 		this.id = id;
 	}
 	
-	public int getPrice() {
+	public int getPrice() 
+	{
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(int price) 
+	{
 		this.price = price;
 	}
 	
-	public String getMaker() {
+	public String getMaker() 
+	{
 		return maker;
 	}
 
-	public void setMaker(String Maker) {
+	public void setMaker(String maker) 
+	{
 		this.maker = maker;
 	}
 	
-	public String getModel() {
+	public String getModel() 
+	{
 		return maker;
 	}
 
-	public void setModel(String Model) {
+	public void setModel(String model) 
+	{
 		this.model = model;
 	}
-	
 }

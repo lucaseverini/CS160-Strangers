@@ -56,9 +56,11 @@
   		</copy>
 
 		<mkdir dir="${build}/web/WEB-INF/classes"/>
+		
     	<move todir="${build}/web/WEB-INF/classes">
     		<fileset dir="${build}">
     			<include name="*.class"/>
+    			<include name="carmatch/beans/*.class"/>
     		</fileset>
   		</move>
 
@@ -160,7 +162,7 @@
 			errorproperty="db.fail" 
 			print="true"
 			output="db.present"> 
-			SELECT * from Vehicle;
+			SELECT * from User;
 		</sql>
 		
   		<condition property="db.present">
@@ -177,7 +179,7 @@
 			url="${tomcat-manager-url}" 
 			username="${tomcat-manager-username}"
 			password="${tomcat-manager-password}" 
-			path="/" />
+			path="/${name}" />
 	</target>
 
 
@@ -187,7 +189,7 @@
 			url="${tomcat-manager-url}" 
 			username="${tomcat-manager-username}"
 			password="${tomcat-manager-password}" 
-			path="/" />
+			path="/${name}" />
 	</target>
 
 
@@ -197,7 +199,7 @@
 			url="${tomcat-manager-url}"
 			username="${tomcat-manager-username}"
 			password="${tomcat-manager-password}"
-			path="/" />
+			path="/${name}" />
 	</target>
 	
 	
@@ -207,8 +209,10 @@
 			url="${tomcat-manager-url}"
 			username="${tomcat-manager-username}"
 			password="${tomcat-manager-password}"
-			path="/"
+			path="/${name}"
 			war="file:${dist}/${name}.war" />
 	</target>
+
+    <import file="nbproject/build-impl.xml"/>
 
 </project>

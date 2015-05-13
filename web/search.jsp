@@ -15,7 +15,7 @@
 		to <input type="number" name="priceTo">
 	</div>
 	<div>Model: <input type="text" name="model"></div>
-	<div>Brand: <input type="text" name="brand"></div>
+	<div>Maker: <input type="text" name="maker"></div>
 	<div><input type="submit" value="Search"></div>
 </form>
 </html>
