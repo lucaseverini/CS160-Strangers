@@ -12,7 +12,8 @@
 	<%@ include file="header.jsp" %>
 
 <% LinkedList<Vehicle> arr = (LinkedList<Vehicle>)request.getAttribute("results"); %>
-<% if (!arr.isEmpty()) { %>
+<% if (arr != null) { %>
+    <% if (!arr.isEmpty()) { %>
 <h1 id="pageTitle">Search Results</h1>
 <table id="searchResults">
 	<tr>
@@ -22,7 +23,7 @@
 	</tr>
 	<% for (Vehicle vehicle : arr) { %> 
 	<tr>
-		<td>$${vehicle.price / 100}</td>
+		<td>${vehicle.price / 100}</td>
 		<td>${vehicle.brand}</td>
 		<td>${vehicle.model}</td>
 		<td>
@@ -36,6 +37,9 @@
 <h1 id="pageTitle">No Match</h1>
 <p>We couldn't find any listings matching your query.</p>
 <!-- This could be better, for example including what we searched for so the user can spot any mistakes they made. -->
+<% }} else { %>  
+<h1 id="pageTitle">Error</h1>
+<p>servlet not called</p>
 <% } %>
 </table>
 </html>

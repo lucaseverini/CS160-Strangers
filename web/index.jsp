@@ -13,8 +13,8 @@
 	<p id="content">Placeholder for other stuff<p>
 	
 	<!-- Dunno where to put the search box -->
-	<form action="results" method = "GET" id ="carsearch">
-		Search for cars: <input type="text" name="carsearch">
+	<form action="results" method = "GET">
+		Search for cars: <input type="text" name="maker">
 		<input type="submit" value = "Search">
 	</form>
 	<br></br>
