@@ -7,7 +7,7 @@ import carmatch.beans.Vehicle;
 //incomplete
 public class ResultServlet extends HttpServlet
 {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		String make = request.getParameter("make");
 		String model = request.getParameter("model");

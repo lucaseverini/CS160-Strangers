@@ -55,8 +55,8 @@
 			</fileset>
   		</copy>
 
-		<mkdir dir="${build}/web/WEB-INF/classes/servlets"/>
-    	<move todir="${build}/web/WEB-INF/classes/servlets">
+		<mkdir dir="${build}/web/WEB-INF/classes"/>
+    	<move todir="${build}/web/WEB-INF/classes">
     		<fileset dir="${build}">
     			<include name="*.class"/>
     		</fileset>
@@ -202,16 +202,6 @@
 	
 	
 	<target name="deploy" depends="dist, create_db_safe" description="Deploy to Tomcat">
-		<echo>Deploying to Tomcat</echo>
-		<deploy 
-			url="${tomcat-manager-url}"
-			username="${tomcat-manager-username}"
-			password="${tomcat-manager-password}"
-			path="/${name}"
-			war="file:${dist}/${name}.war" />
-	</target>
-
-	<target name="run-deploy" depends="dist, create_db_safe" description="Deploy to Tomcat">
 		<echo>Deploying to Tomcat</echo>
 		<deploy 
 			url="${tomcat-manager-url}"
