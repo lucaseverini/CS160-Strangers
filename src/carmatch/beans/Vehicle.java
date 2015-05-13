@@ -60,7 +60,7 @@ public class Vehicle implements Serializable
 	
 	public String getModel() 
 	{
-		return maker;
+		return model;
 	}
 
 	public void setModel(String model) 
