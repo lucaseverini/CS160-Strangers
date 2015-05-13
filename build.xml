@@ -211,14 +211,4 @@
 			war="file:${dist}/${name}.war" />
 	</target>
 
-	<target name="run-deploy" depends="dist, create_db_safe" description="Deploy to Tomcat">
-		<echo>Deploying to Tomcat</echo>
-		<deploy 
-			url="${tomcat-manager-url}"
-			username="${tomcat-manager-username}"
-			password="${tomcat-manager-password}"
-			path="/${name}"
-			war="file:${dist}/${name}.war" />
-	</target>
-
 </project>
