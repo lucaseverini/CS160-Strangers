@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="carmatch.beans.Vehicle, java.util.List" %>
+<%@ page import="carmatch.beans.Vehicle, java.util.List, java.util.LinkedList" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,8 @@
 <body>
 	<%@ include file="header.jsp" %>
 
-<% if (!request.getAttribute("results").isEmpty()) { %>
+<% LinkedList<Vehicle> arr = (LinkedList<Vehicle>)request.getAttribute("results"); %>
+<% if (!arr.isEmpty()) { %>
 <h1 id="pageTitle">Search Results</h1>
 <table id="searchResults">
 	<tr>
@@ -18,7 +20,7 @@
 		<th>Brand</th>
 		<th>Model</th>
 	</tr>
-	<% for (Vehicle vehicle : request.getAttribute("results")) { %> 
+	<% for (Vehicle vehicle : arr) { %> 
 	<tr>
 		<td>$${vehicle.price / 100}</td>
 		<td>${vehicle.brand}</td>
