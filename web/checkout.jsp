@@ -20,7 +20,6 @@
 	<div><span class="ch"><b>Billing Address</b></span></div>
 	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
 		<tr>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 			<td class="main" width="50%" valign="top">
 				Please choose from your address book where you would like the invoice to be sent to.<br><br>
 				<a href=""><img src="images/buttons/button_change_address.gif" border="0" alt="Change Address" title=" Change Address " width="197" height="32"></a>
@@ -28,9 +27,7 @@
 			<td align="right" width="50%" valign="top"><table border="0" cellspacing="0" cellpadding="2">
 				<tr>
 					<td class="main" align="center" valign="top"><b>Billing Address:</b><br><img src="images/arrow_south_east.gif" border="0" alt="" width="50" height="31"></td>
-					<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 					<td class="main" valign="top">Luca Severini<br> 333 Escuela Ave<br> Apt. 305<br> Mountain View, CA    94040<br> United States</td>
-					<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 				</tr>
 			</table></td>
 		</tr>
@@ -38,16 +35,11 @@
 	<div><span class="ch"><b>Payment Method</b></span></div>
 	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
 		<tr>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 			<td class="main" width="90%" valign="top"><b>Please select your payment method below for this order:</b></td>
-			<td class="main" width="10%" valign="top" align="right"><b>Please Select:</b></td>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 		</tr>
 		<tr>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 			<td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
 				<tr class="moduleRow">
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 					<td class="main" colspan="3" nowrap>
 						<font size="2" face="tahoma"><b>
 							Credit Card or Paypal
@@ -76,16 +68,12 @@
 					<td class="main" align="right">
 						<input type="radio" name="payment" value="paypal" CHECKED> &nbsp; 
 					</td>
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 				</tr>
 			</table></td>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 		</tr>
 		<tr>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 			<td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
 				<tr class="moduleRow">
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 					<td class="main" colspan="3" nowrap>
 						<font size="2" face="tahoma"><b>Check or Money Order</b></font>
 						<img src="images/check.gif" border=0 alt=" Send Us a Check " align="absmiddle">
@@ -93,49 +81,28 @@
 					<td class="main" align="right">
 						<input type="radio" name="payment" value="moneyorder"> &nbsp; 
 					</td>
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 				</tr>
 			</table></td>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 		</tr>
 		<tr>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
-			<td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2"></table></td>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
-		</tr>
-		<tr>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
-			<td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2"></table></td>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
-		</tr>
-		<tr>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 			<td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
 				<tr class="moduleRow">
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 					<td class="main" colspan="3" nowrap>
 						<font size="2" face="tahoma"><b>Purchase Order (Business Customers Only)</b></font>
 					</td>
 					<td class="main" align="right">
 						<input type="radio" name="payment" value="po"> &nbsp; 
 					</td>
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 				</tr>
 				<tr>
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 					<td colspan="4"><table border="0" cellspacing="0" cellpadding="2">
 						<tr>
-							<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 							<td class="main">Purchase Order Number:</td>
-							<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 							<td class="main"><input type="text" name="purchase_order_number"></td>
-							<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 						</tr>
 					</table></td>
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 				</tr>
 			</table></td>
-			<td><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 		</tr>
 	</table></div>
 
@@ -153,32 +120,24 @@
 	<div><span class="ch"><b>Credits Available</b></span></div>
 	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
 		<tr>
-			<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 			<td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
 				<tr class="moduleRow">
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 					<td class="main"><b>Gift Vouchers/Discount Coupons</b></td>
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 				</tr>
 				<tr>
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 					<td class="main">
 						Enter Redeem Code&nbsp;&nbsp;<input type="text" name="gv_redeem_code">
 					</td>
 					<td align="right">
 						<input type="image" name="submit_redeem" src="images/buttons/button_redeem.gif" border="0" alt="IMAGE_REDEEM_VOUCHER" title = "IMAGE_REDEEM_VOUCHER"></td>
-					<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 				</tr>
 			</table></td>
-			<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 		</tr>
 	</table></div>
 	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
 		<tr>
-			<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 			<td class="main"><font size=3 face=arial color=black>Click <b>continue</b> button to view order summary and confirm</td>
 			<td class="main" align="right"><input type="image" src="images/buttons/button_continue.gif" border="0" alt="Continue" title=" Continue "></td>
-			<td width="10"><img src="images/pixel_trans.gif" border="0" alt="" width="10" height="1"></td>
 		</tr>
 	</table></div>
 </form>
