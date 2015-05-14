@@ -8,6 +8,7 @@
 -->
 
 <%@ page contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,8 @@
 
 <form name="checkout_payment" action="" method="post">
 	<input type="hidden" name="vehicleId" value="<%= request.getParameter("vehicleId") %>">
+	<input type="hidden" name="sellerId" value="<%= request.getParameter("sellerId") %>">
+	<input type="hidden" name="userId" value="<%= request.getSession().getAttribute("id") %>">
 	<h2>Billing Address</h2>
 	<div>
 		<!-- Assuming only accepting US addresses is OK -->
@@ -36,7 +39,7 @@
 		<label><input type="radio" name="payment" value="paypal" CHECKED> Credit Card or PayPal</label>
 		<div class="paymentImgs">
 			<a href="https://www.paypal.com/us/webapps/mpp/pay-online">
-				<img src="images/banner_intl.gif" border="0" title=" PayPal " alt="PayPal" border="0" align="bottom">
+				<img src="images/banner_intl.gif" border="0" title=" PayPal " alt="PayPal" align="bottom">
 			</a>
 			<img src="images/ccards/logo_ccVisa.gif" alt="Visa">
 			<img src="images/ccards/logo_ccMC.gif" alt="MasterCard">

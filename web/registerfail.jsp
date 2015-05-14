@@ -1,3 +1,12 @@
+<!-- 
+	registerfail.jsp
+
+    JSP for the failed registration page
+        
+    SJSU - CS160 - Strangers
+	May-5-2015
+-->
+
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE html>
 <html>

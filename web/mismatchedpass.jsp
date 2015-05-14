@@ -1,3 +1,11 @@
+<!-- 
+	mismatchedpass.jsp
+
+    JSP for the wrong password page
+        
+    SJSU - CS160 - Strangers
+	May-5-2015
+-->
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE html>
