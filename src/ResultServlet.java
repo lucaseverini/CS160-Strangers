@@ -70,7 +70,7 @@ public class ResultServlet extends HttpServlet
 				query += "SELECT Vehicle.Code, Price, Model, Seller, Name FROM Vehicle inner join Manufacturer on Vehicle.Manufacturer=Manufacturer.Code";
 			}
 		
-			if (!model.equals(""))
+			if (model != null && !model.equals(""))
 			{
 				if (!maker.equals(""))
 				{
@@ -83,31 +83,24 @@ public class ResultServlet extends HttpServlet
 				
 				query += " Model='" + model + "'";
 			}
+			
+            if (priceTo != null && priceFrom != null) {
+                if ((!priceTo.equals("")) || !priceFrom.equals("")) {
+                    if (!maker.equals("") || !model.equals("")) {
+                        query += " AND";
+                    } else {
+                        query += " WHERE";
+                    }
 
-			if ((!priceTo.equals("")) || !priceFrom.equals(""))
-			{
-				if (!maker.equals("") || !model.equals(""))
-				{
-					query += " AND";
-				}
-				else
-				{
-					query += " WHERE";
-				}
-
-				if ((!priceTo.equals("")) && !priceFrom.equals(""))
-				{
-					query += " Price>=" + priceFrom + " AND Price<= " + priceTo;
-				}
-				else if (!priceTo.equals(""))
-				{
-					query += " Price<=" + priceTo;
-				}
-				else
-				{
-					query += " Price>=" + priceFrom;
-				}
-			}
+                    if ((!priceTo.equals("")) && !priceFrom.equals("")) {
+                        query += " price>=" + priceFrom + " AND price<= " + priceTo;
+                    } else if (!priceTo.equals("")) {
+                        query += " price<=" + priceTo;
+                    } else {
+                        query += " price>=" + priceFrom;
+                    }
+                }
+            }
 			
 			query += " ORDER BY Price ASC, Name ASC, Model ASC";
 			
