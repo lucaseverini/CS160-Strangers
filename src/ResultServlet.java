@@ -110,6 +110,8 @@ public class ResultServlet extends HttpServlet
 				}
 			}
 			
+			query += " ORDER BY Price ASC, Name ASC, Model ASC";
+			
 			ResultSet rs = statement.executeQuery(query);
 			while(rs.next())
 			{
