@@ -1,7 +1,7 @@
 <!-- 
 	index.jsp
 
-    Javascript for the main page
+    JSP for the main page
         
     SJSU - CS160 - Strangers
 	May-5-2015

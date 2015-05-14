@@ -1,7 +1,7 @@
 <!-- 
 	results.jsp
 
-    Javascript for the result page
+    JSP for the result page
         
     SJSU - CS160 - Strangers
 	May-5-2015

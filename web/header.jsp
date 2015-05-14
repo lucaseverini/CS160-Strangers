@@ -1,7 +1,7 @@
 <!-- 
 	header.jsp
 
-    Javascript for the header in main page
+    JSP for the header in main page
         
     SJSU - CS160 - Strangers
 	May-5-2015
