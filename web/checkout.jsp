@@ -21,20 +21,15 @@
 
 <form name="checkout_payment" action="" method="post">
 	<h2>Billing Address</h2>
-	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
-		<tr>
-			<td class="main" width="50%" valign="top">
-				Please choose from your address book where you would like the invoice to be sent to.<br><br>
-				<button type="button">Change Address</button>
-			</td>
-			<td align="right" width="50%" valign="top"><table border="0" cellspacing="0" cellpadding="2">
-				<tr>
-					<td class="main" align="center" valign="top"><b>Billing Address:</b><br><img src="images/arrow_south_east.gif" border="0" alt="" width="50" height="31"></td>
-					<td class="main" valign="top">Luca Severini<br> 333 Escuela Ave<br> Apt. 305<br> Mountain View, CA    94040<br> United States</td>
-				</tr>
-			</table></td>
-		</tr>
-	</table></div>
+	<div>
+		<!-- Assuming only accepting US addresses is OK -->
+		<label><span class="labelText">Name:</span><input type="text" name="billingName"></label>
+		<label><span class="labelText">Address Line 1:</span><input type="text" name="billingAddr1"></label>
+		<label><span class="labelText">Address Line 2:</span><input type="text" name="billingAddr2"></label>
+		<label><span class="labelText">City:</span><input type="text" name="billingCity"></label>
+		<label><span class="labelText">State:</span><input type="text" name="billingState"></label>
+		<label><span class="labelText">ZIP Code:</span><input type="text" name="billingZIP"></label>
+	</div>
 	<h2>Payment Method</h2>
 	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
 		<tr>
@@ -56,17 +51,7 @@
 								<img src="images/banner_intl.gif" border="0" title=" PayPal " alt="PayPal" border="0" align="bottom">
 							</a>
 						</b></font>
-						<br>
-						You do not need to have a PayPal account if you want to pay by credit card.
-						<script>
-							document.writeln('<a style="cursor:hand" onclick="javascript:popup=window.open('
-								+ '\'CreditCardExplain.html\',\'popup\','
-								+ '\'scrollbars,resizable,width=500,height=600,left=50,top=50\'); popup.focus(); return false;">'
-								+ '<font color="blue"><u>[more info]</u></font></a>');
-						</script>
-						<noscript>
-							<a href="CreditCardExplain.html" target="_blank"><font color="blue"><u>[more info]</u></font></a>
-						</noscript>
+						<p class="helpText">Your credit card payment will be processed by PayPal. This does not require a Paypal account.</p>
 					</td>
 					<td class="main" align="right">
 						<input type="radio" name="payment" value="paypal" CHECKED> &nbsp; 
