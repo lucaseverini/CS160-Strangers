@@ -12,8 +12,7 @@ import java.io.Serializable;
 
 /**
  * Java Bean for a vehicle listing.
- * Only implements enough for display in search results; add more as more of the
- * application is implemented.
+ * Only implements enough for display in search result
  */
 public class Vehicle implements Serializable 
 {
