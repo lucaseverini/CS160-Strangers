@@ -20,6 +20,7 @@
 <h1 id="pageTitle">Vehicle Purchase Checkout</h1>
 
 <form name="checkout_payment" action="" method="post">
+	<input type="hidden" name="vehicleId" value="<%= request.getParameter("vehicleId") %>">
 	<h2>Billing Address</h2>
 	<div>
 		<!-- Assuming only accepting US addresses is OK -->

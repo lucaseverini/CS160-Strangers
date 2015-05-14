@@ -104,6 +104,7 @@ public class ResultServlet extends HttpServlet
                         while(rs.next())
                         {
                             Vehicle x = new Vehicle();
+							x.setId(rs.getInt("Code"));
                             x.setPrice(rs.getInt("Price"));
                             x.setMaker(rs.getString("Name"));
                             x.setModel(rs.getString("Model"));
