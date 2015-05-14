@@ -1,3 +1,12 @@
+<!-- 
+	results.jsp
+
+    Javascript for the result page
+        
+    SJSU - CS160 - Strangers
+	May-5-2015
+-->
+
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="carmatch.beans.Vehicle, java.util.List, java.util.LinkedList" %>
 

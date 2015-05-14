@@ -1,3 +1,12 @@
+<!-- 
+	index.jsp
+
+    Javascript for the main page
+        
+    SJSU - CS160 - Strangers
+	May-5-2015
+-->
+
 <%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>

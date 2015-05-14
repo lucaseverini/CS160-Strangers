@@ -1,9 +1,9 @@
 <!-- 
 	build.xml
 
-    Ant file to build the CarMatch web app and database
+    Ant file to build and deploy the CarMatch web app and its mysql database
         
-    SJSU - CS160 - HW #6 - Strangers
+    SJSU - CS160 - Strangers
 	May-5-2015
 -->
 
@@ -213,6 +213,6 @@
 			war="file:${dist}/${name}.war" />
 	</target>
 
-    <import file="nbproject/build-impl.xml"/>
+    <!-- <import file="nbproject/build-impl.xml"/> -->
 
 </project>

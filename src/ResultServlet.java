@@ -71,7 +71,8 @@ public class ResultServlet extends HttpServlet
                         else
                         {
                             query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code ";
-                            if (!maker.equals(""))
+                            
+							if (!maker.equals(""))
                             {
                                 query += "WHERE name='" + maker + "'";
                             }
@@ -81,7 +82,6 @@ public class ResultServlet extends HttpServlet
                             }
                             if ((!priceTo.equals("")) || !priceFrom.equals(""))
                             {
-
                                 if ((!priceTo.equals("")) && !priceFrom.equals(""))
                                 {
                                     query += "WHERE price>=" + priceFrom + " AND price<= " + priceTo;
