@@ -57,7 +57,8 @@ public class RegisterServlet extends HttpServlet {
             Connection connection = null;
             Statement statement = null;
             String name = request.getParameter("username");
-            String pass = request.getParameter("password");           
+            String pass = request.getParameter("password");
+            String cfpass = request.getParameter("confirmpassword"); 
             try
             {
  		connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
@@ -66,8 +67,11 @@ public class RegisterServlet extends HttpServlet {
                 //checking for empty fields
                 if(name.equals("") || pass.equals(""))
                 {
-                    this.getServletContext().getRequestDispatcher("/blankfield.jsp").forward(request, response);
-                    
+                    this.getServletContext().getRequestDispatcher("/blankfield.jsp").forward(request, response);                  
+                }
+                else if (!cfpass.equals(pass))
+                {
+                    this.getServletContext().getRequestDispatcher("/mismatchedpass.jsp").forward(request, response);
                 }
                 else
                 {
