@@ -61,59 +61,68 @@ public class ResultServlet extends HttpServlet
 		{
 			connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			statement = connection.createStatement();
-			if (model == null && maker != null)
-                        {
-                   	    if (!maker.equals(""))
-                            {
-                                query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code WHERE name='" + maker + "'";
-                            }
-                        }
-                        else
-                        {
-                            query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code ";
-                            
-							if (!maker.equals(""))
-                            {
-                                query += "WHERE name='" + maker + "'";
-                            }
-                            if (!model.equals(""))
-                            {
-                                query += "WHERE model='" + model + "'";
-                            }
-                            if ((!priceTo.equals("")) || !priceFrom.equals(""))
-                            {
-                                if ((!priceTo.equals("")) && !priceFrom.equals(""))
-                                {
-                                    query += "WHERE price>=" + priceFrom + " AND price<= " + priceTo;
-                                }
-                                else if (!priceTo.equals(""))
-                                {
-                                    query += "WHERE price<=" + priceTo;
-                                }
-                                else
-                                {
-                                    query += "WHERE price>=" + priceFrom;
-                                }
-                            }
-                        }
-                        if (query.equals(""))
-                        {
-                            query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code ";
-                        }
-                        ResultSet rs = statement.executeQuery(query);
-                        while(rs.next())
-                        {
-                            Vehicle x = new Vehicle();
-                            x.setPrice(rs.getInt("Price"));
-                            x.setMaker(rs.getString("Name"));
-                            x.setModel(rs.getString("Model"));
-                            cars.add(x);
-                        }
-                        
-                    request.setAttribute("results", cars);
-                    this.getServletContext().getRequestDispatcher("/results.jsp").include(request, response);
-                    rs.close();
+
+			if (!maker.equals(""))
+			{
+				query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code WHERE name='" + maker + "'";
+			}
+			else
+			{
+				query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code";
+			}
+		
+			if (!model.equals(""))
+			{
+				if (!maker.equals(""))
+				{
+					query += " AND";
+				}
+				else
+				{
+					query += " WHERE";
+				}
+				
+				query += " model='" + model + "'";
+			}
+
+			if ((!priceTo.equals("")) || !priceFrom.equals(""))
+			{
+				if (!maker.equals("") || !model.equals(""))
+				{
+					query += " AND";
+				}
+				else
+				{
+					query += " WHERE";
+				}
+
+				if ((!priceTo.equals("")) && !priceFrom.equals(""))
+				{
+					query += " price>=" + priceFrom + " AND price<= " + priceTo;
+				}
+				else if (!priceTo.equals(""))
+				{
+					query += " price<=" + priceTo;
+				}
+				else
+				{
+					query += " price>=" + priceFrom;
+				}
+			}
 			
+			ResultSet rs = statement.executeQuery(query);
+			while(rs.next())
+			{
+				Vehicle x = new Vehicle();
+				x.setPrice(rs.getInt("Price"));
+				x.setMaker(rs.getString("Name"));
+				x.setModel(rs.getString("Model"));
+				cars.add(x);
+			}
+
+			request.setAttribute("results", cars);
+			this.getServletContext().getRequestDispatcher("/results.jsp").include(request, response);
+			rs.close();			
 		}	
         catch(SQLException e)
         {
