@@ -1,7 +1,7 @@
 <!-- 
 	search.jsp
 
-    Javascript for the advanced search page
+    JSP for the advanced search page
         
     SJSU - CS160 - Strangers
 	May-5-2015

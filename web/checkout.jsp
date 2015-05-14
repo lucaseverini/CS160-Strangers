@@ -1,7 +1,7 @@
 <!-- 
 	checkout.jsp
 
-    Javascript for the checkout page
+    JSP for the checkout page
         
     SJSU - CS160 - Strangers
 	May-5-2015
