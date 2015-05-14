@@ -12,6 +12,10 @@ body {
 	margin:0;
 	padding:0;
 }
+.header{
+	background-color: #175ACF;
+	padding: 5px;
+}
 .header ~ * {
 	margin: 0 1.5em;
 }
@@ -22,7 +26,7 @@ body {
 	display: inline;
 }
 #logo a {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 #login, #logout {
@@ -30,16 +34,17 @@ body {
 	font-size: 12px;
 	padding: 5px;
 	display: inline-block;
-	border: 1px solid black; /* temporary */
+	border: 1px solid black;
+	background: #BAD7F7;
 }
 #accountInvite {
 	text-align: center;
 }
 #pageTitle {
 	color:#003399;
-	font-size:24px;
+	font-size: 32px;
 	font-weight:bold;
-	text-align:center;
+	margin: 0.5em 0.8em;
 }
 #content{
 	text-align: center;
@@ -52,11 +57,6 @@ body {
 }
 .smallbox{
 	font-size:10px;
-}
-
-.header{
-	background-color: #19A3D1;
-	padding: 5px;
 }
 
 .user {
