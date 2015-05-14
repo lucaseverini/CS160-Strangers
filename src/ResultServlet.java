@@ -65,46 +65,47 @@ public class ResultServlet extends HttpServlet
                         {
                    	    if (!maker.equals(""))
                             {
-                                query += "SELECT * FROM vehicle WHERE manufacturer='" + maker + "'";
+                                query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code WHERE name='" + maker + "'";
                             }
                         }
                         else
                         {
+                            query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code ";
                             if (!maker.equals(""))
                             {
-                                query += "SELECT * FROM vehicle WHERE manufacturer='" + maker + "'";
+                                query += "WHERE name='" + maker + "'";
                             }
                             if (!model.equals(""))
                             {
-                                query += "SELECT * FROM vehicle WHERE model='" + model + "'";
+                                query += "WHERE model='" + model + "'";
                             }
                             if ((!priceTo.equals("")) || !priceFrom.equals(""))
                             {
 
                                 if ((!priceTo.equals("")) && !priceFrom.equals(""))
                                 {
-                                    query += "SELECT * FROM vehicle WHERE price>=" + priceFrom + " AND price<= " + priceTo;
+                                    query += "WHERE price>=" + priceFrom + " AND price<= " + priceTo;
                                 }
                                 else if (!priceTo.equals(""))
                                 {
-                                    query += "SELECT * FROM vehicle WHERE price<= " + priceTo;
+                                    query += "WHERE price<=" + priceTo;
                                 }
                                 else
                                 {
-                                    query += "SELECT * FROM vehicle WHERE price>=" + priceFrom;
+                                    query += "WHERE price>=" + priceFrom;
                                 }
                             }
                         }
                         if (query.equals(""))
                         {
-                            query += "SELECT * FROM vehicle";
+                            query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code ";
                         }
                         ResultSet rs = statement.executeQuery(query);
                         while(rs.next())
                         {
                             Vehicle x = new Vehicle();
                             x.setPrice(rs.getInt("Price"));
-                            x.setMaker(rs.getString("Manufacturer"));
+                            x.setMaker(rs.getString("Name"));
                             x.setModel(rs.getString("Model"));
                             cars.add(x);
                         }
