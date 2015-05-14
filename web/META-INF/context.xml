@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	context.xml
+
+    Definition of ciontext for web app deployed to Tomcat
+        
+    SJSU - CS160 - Strangers
+	May-5-2015
+-->
+
 <Context antiJARLocking="true" path="/CarMatch"/>

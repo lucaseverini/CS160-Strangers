@@ -1,3 +1,12 @@
+<!-- 
+	header.jsp
+
+    Javascript for the header in main page
+        
+    SJSU - CS160 - Strangers
+	May-5-2015
+-->
+
 <!-- Start of header -->
 <div class="header"> 
 	<h1 id="logo" ><a href="/">CarMatch</a></h1>

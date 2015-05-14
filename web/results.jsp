@@ -1,3 +1,12 @@
+<!-- 
+	results.jsp
+
+    Javascript for the result page
+        
+    SJSU - CS160 - Strangers
+	May-5-2015
+-->
+
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="carmatch.beans.Vehicle, java.util.List, java.util.LinkedList" %>
 
@@ -23,9 +32,9 @@
 	</tr>
 	<% for (Vehicle vehicle : arr) { %> 
 	<tr>
-		<td>${vehicle.price / 100}</td>
-		<td>${vehicle.brand}</td>
-		<td>${vehicle.model}</td>
+		<td><%= (int)vehicle.getPrice()%></td>
+		<td><%= (String)vehicle.getMaker()%></td>
+		<td><%= (String)vehicle.getModel()%></td>
 		<td>
 		<form action="checkout.jsp" method = "GET">
 		<input type="submit" name="buy" value="buy">
