@@ -115,7 +115,7 @@ public class LoginServlet extends HttpServlet
            session.setAttribute("user", user);
            session.setAttribute("id", id);
            session.setMaxInactiveInterval(30*60);
-		   String contextPath = "/" + props.getProperty("name");
+		   String contextPath = "/";
            String encodedURL = response.encodeRedirectURL(contextPath);
            response.sendRedirect(encodedURL);
         }      

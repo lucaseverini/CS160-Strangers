@@ -45,7 +45,7 @@ public class LogoutServlet extends HttpServlet
             session.invalidate();
         }
 		
-		String contextPath = "/" + props.getProperty("name");
+		String contextPath = "/";
         String encodedURL = response.encodeRedirectURL(contextPath);
         response.sendRedirect(encodedURL);
     }
