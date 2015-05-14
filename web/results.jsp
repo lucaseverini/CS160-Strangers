@@ -37,7 +37,8 @@
 		<td><%= (String)vehicle.getModel()%></td>
 		<td>
 		<form action="checkout.jsp" method="GET">
-			<input type="hidden" name="vehicleId" value="<%= vehicle.getId() %>">
+			<input type="hidden" name="vehicleId" value="<%= vehicle.getCode() %>">
+			<input type="hidden" name="sellerId" value="<%= vehicle.getSeller() %>">
 			<input type="submit" name="buy" value="buy">
 		</form>
 		</td>
