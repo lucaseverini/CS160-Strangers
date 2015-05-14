@@ -84,56 +84,8 @@
 				</tr>
 			</table></td>
 		</tr>
-		<tr>
-			<td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
-				<tr class="moduleRow">
-					<td class="main" colspan="3" nowrap>
-						<font size="2" face="tahoma"><b>Purchase Order (Business Customers Only)</b></font>
-					</td>
-					<td class="main" align="right">
-						<input type="radio" name="payment" value="po"> &nbsp; 
-					</td>
-				</tr>
-				<tr>
-					<td colspan="4"><table border="0" cellspacing="0" cellpadding="2">
-						<tr>
-							<td class="main">Purchase Order Number:</td>
-							<td class="main"><input type="text" name="purchase_order_number"></td>
-						</tr>
-					</table></td>
-				</tr>
-			</table></td>
-		</tr>
 	</table></div>
 
-	<div class="main"><span class="ch"><b>Trackable Shipping</b></span></div>
-	<div><table cellpadding="2" cellspacing="2" border="0">
-		<tr>
-			<td><font size=2 face=arial color=black><b>Do you want Trackable Shipping with Insurance?</td>
-			<td align="center" valign="center" width="28"><input type="checkbox" name="choose_insurance" value="1"></td>
-			<td align="left" valign="center" width="28">
-				<a style="cursor:hand" onclick="javascript:window.open('TrackingExplain.html',null,'scrollbars,resizable,width=500,height=420,left=50,top=50');"><img src="images/icons/question-mark.jpg" alt="Help with Tracking" border=0></a>
-			</td>
-		</tr>
-	</table></div>
-
-	<div><span class="ch"><b>Credits Available</b></span></div>
-	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
-		<tr>
-			<td colspan="2"><table border="0" width="100%" cellspacing="0" cellpadding="2">
-				<tr class="moduleRow">
-					<td class="main"><b>Gift Vouchers/Discount Coupons</b></td>
-				</tr>
-				<tr>
-					<td class="main">
-						Enter Redeem Code&nbsp;&nbsp;<input type="text" name="gv_redeem_code">
-					</td>
-					<td align="right">
-						<input type="image" name="submit_redeem" src="images/buttons/button_redeem.gif" border="0" alt="IMAGE_REDEEM_VOUCHER" title = "IMAGE_REDEEM_VOUCHER"></td>
-				</tr>
-			</table></td>
-		</tr>
-	</table></div>
 	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
 		<tr>
 			<td class="main"><font size=3 face=arial color=black>Click <b>continue</b> button to view order summary and confirm</td>
