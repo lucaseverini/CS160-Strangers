@@ -37,9 +37,9 @@ body {
 }
 #pageTitle {
 	color:#003399;
-	font-size:24px;
+	font-size: 32px;
 	font-weight:bold;
-	text-align:center;
+	margin: 0.5em 0.8em;
 }
 #content{
 	text-align: center;
