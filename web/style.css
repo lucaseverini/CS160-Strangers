@@ -70,3 +70,12 @@ body {
 	padding: 3px;
 	border: 1px solid black;
 }
+
+.inputLine {
+	display: block;
+	margin: 0.2em 0;
+}
+.labelText {
+	display: inline-block;
+	width: 10em;
+}

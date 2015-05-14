@@ -24,12 +24,12 @@
 	<h2>Billing Address</h2>
 	<div>
 		<!-- Assuming only accepting US addresses is OK -->
-		<label><span class="labelText">Name:</span><input type="text" name="billingName"></label>
-		<label><span class="labelText">Address Line 1:</span><input type="text" name="billingAddr1"></label>
-		<label><span class="labelText">Address Line 2:</span><input type="text" name="billingAddr2"></label>
-		<label><span class="labelText">City:</span><input type="text" name="billingCity"></label>
-		<label><span class="labelText">State:</span><input type="text" name="billingState"></label>
-		<label><span class="labelText">ZIP Code:</span><input type="text" name="billingZIP"></label>
+		<label class="inputLine"><span class="labelText">Name:</span><input type="text" name="billingName"></label>
+		<label class="inputLine"><span class="labelText">Address Line 1:</span><input type="text" name="billingAddr1"></label>
+		<label class="inputLine"><span class="labelText">Address Line 2:</span><input type="text" name="billingAddr2"></label>
+		<label class="inputLine"><span class="labelText">City:</span><input type="text" name="billingCity"></label>
+		<label class="inputLine"><span class="labelText">State:</span><input type="text" name="billingState"></label>
+		<label class="inputLine"><span class="labelText">ZIP Code:</span><input type="text" name="billingZIP"></label>
 	</div>
 	<h2>Payment Method</h2>
 	<div class="paymentMethod">
