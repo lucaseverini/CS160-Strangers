@@ -11,18 +11,12 @@
 <h1 id="pageTitle">Vehicle Purchase Checkout</h1>
 
 <form name="checkout_payment" action="" method="post">
-	<div><table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#F0F8FF">
-		<tr>
-			<td class="pageHeading"><table cellpadding=0 cellspacing=4 border=0><td valign=middle><img src=images/secure.gif alt=secure></td><td valign=middle><font face="arial" size="4" color="#888888">Payment Information</td></tr></table></td>
-			<td class="pageHeading" align="right"><img src=images/secure.gif alt=secure></td>
-		</tr>
-	</table></div>
-	<div><span class="ch"><b>Billing Address</b></span></div>
+	<h2>Billing Address</h2>
 	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
 		<tr>
 			<td class="main" width="50%" valign="top">
 				Please choose from your address book where you would like the invoice to be sent to.<br><br>
-				<a href=""><img src="images/buttons/button_change_address.gif" border="0" alt="Change Address" title=" Change Address " width="197" height="32"></a>
+				<button type="button">Change Address</button>
 			</td>
 			<td align="right" width="50%" valign="top"><table border="0" cellspacing="0" cellpadding="2">
 				<tr>
@@ -32,7 +26,7 @@
 			</table></td>
 		</tr>
 	</table></div>
-	<div><span class="ch"><b>Payment Method</b></span></div>
+	<h2>Payment Method</h2>
 	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
 		<tr>
 			<td class="main" width="90%" valign="top"><b>Please select your payment method below for this order:</b></td>
@@ -86,12 +80,7 @@
 		</tr>
 	</table></div>
 
-	<div><table border="0" width="100%" cellspacing="0" cellpadding="2">
-		<tr>
-			<td class="main"><font size=3 face=arial color=black>Click <b>continue</b> button to view order summary and confirm</td>
-			<td class="main" align="right"><input type="image" src="images/buttons/button_continue.gif" border="0" alt="Continue" title=" Continue "></td>
-		</tr>
-	</table></div>
+	<div><button type="submit">Continue to Order Summary &amp; Confirmation</button></div>
 </form>
 </body>
 </html>
