@@ -16,7 +16,7 @@
 		<label>Username: <input type="text" class="smallbox" name="user"></label>
 		<label>Password: <input type="password" class="smallbox" name="pass"></label>
 		<input type="submit" value="Login" class="smallbox">
-		<div id="accountInvite">Need an account? <a href="/registerform.jsp">Register</a></div>
+		<div id="accountInvite">Need an account? <a href="./registerform.jsp">Register</a></div>
 	</form>
 	<% } 
         else 

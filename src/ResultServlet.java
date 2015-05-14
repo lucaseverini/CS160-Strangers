@@ -14,7 +14,6 @@ import java.util.LinkedList;
 import carmatch.beans.Vehicle;
 import java.util.Properties;
 
-//incomplete
 public class ResultServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
