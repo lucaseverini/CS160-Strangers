@@ -19,8 +19,9 @@ public class Vehicle implements Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
-	private long id;
-	private int price;		// Price in cents
+	private long code;
+	private long seller;
+	private int price;
 	private String maker;
 	private String model;
 	
@@ -28,16 +29,26 @@ public class Vehicle implements Serializable
 	{
 	}
 	
-	public long getId() 
+	public long getCode() 
 	{
-		return id;
+		return code;
 	}
 	
-	public void setId(long id) 
+	public void setCode(long code) 
 	{
-		this.id = id;
+		this.code = code;
 	}
 	
+	public long getSeller() 
+	{
+		return seller;
+	}
+	
+	public void setSeller(long seller) 
+	{
+		this.seller = seller;
+	}
+
 	public int getPrice() 
 	{
 		return price;

@@ -14,7 +14,6 @@ import java.util.LinkedList;
 import carmatch.beans.Vehicle;
 import java.util.Properties;
 
-//incomplete
 public class ResultServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
@@ -64,11 +63,11 @@ public class ResultServlet extends HttpServlet
 
 			if (!maker.equals(""))
 			{
-				query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code WHERE name='" + maker + "'";
+				query += "SELECT Vehicle.Code, Price, Model, Seller, Name FROM Vehicle inner join Manufacturer on Vehicle.Manufacturer=Manufacturer.Code WHERE Name='" + maker + "'";
 			}
 			else
 			{
-				query += "SELECT Price, Model, Name FROM vehicle inner join manufacturer on vehicle.manufacturer=manufacturer.code";
+				query += "SELECT Vehicle.Code, Price, Model, Seller, Name FROM Vehicle inner join Manufacturer on Vehicle.Manufacturer=Manufacturer.Code";
 			}
 		
 			if (!model.equals(""))
@@ -82,7 +81,7 @@ public class ResultServlet extends HttpServlet
 					query += " WHERE";
 				}
 				
-				query += " model='" + model + "'";
+				query += " Model='" + model + "'";
 			}
 
 			if ((!priceTo.equals("")) || !priceFrom.equals(""))
@@ -98,15 +97,15 @@ public class ResultServlet extends HttpServlet
 
 				if ((!priceTo.equals("")) && !priceFrom.equals(""))
 				{
-					query += " price>=" + priceFrom + " AND price<= " + priceTo;
+					query += " Price>=" + priceFrom + " AND Price<= " + priceTo;
 				}
 				else if (!priceTo.equals(""))
 				{
-					query += " price<=" + priceTo;
+					query += " Price<=" + priceTo;
 				}
 				else
 				{
-					query += " price>=" + priceFrom;
+					query += " Price>=" + priceFrom;
 				}
 			}
 			
@@ -116,7 +115,8 @@ public class ResultServlet extends HttpServlet
 			while(rs.next())
 			{
 				Vehicle x = new Vehicle();
-				x.setId(rs.getInt("Code"));
+				x.setCode(rs.getLong("Vehicle.Code"));
+				x.setSeller(rs.getLong("Seller"));
 				x.setPrice(rs.getInt("Price"));
 				x.setMaker(rs.getString("Name"));
 				x.setModel(rs.getString("Model"));
